@@ -59,7 +59,7 @@
             </a-form>
 
             <div v-if="alertJob">
-                <a-alert message="บันทึกไม่สำเร็จ ช่วงเวลานี้มีผู้ฝช้งานจองแล้วกรุณาตรวจสอบ" type="warning" style="margin-bottom: 15px;" />
+                <a-alert message="บันทึกไม่สำเร็จ ช่วงเวลานี้มีผู้ใช้งานจองแล้ว โปรดเลือกช่วงเวลาใหม่" type="warning" style="margin-bottom: 15px;" />
                 <ListJob :data="dataListJob"/>
             </div>
         </a-drawer>
@@ -122,7 +122,7 @@ const checkBtnRoom = (startTime, endTime) => {
     //     'DATE : ' + now.format('YYYY-MM-DD HH:mm:ss'), 
     //     'END : ' + end.format('YYYY-MM-DD HH:mm:ss'),
     //     now.diff(end, 'minute'))
-    return ((now.diff(start, 'minute') > 0) && (now.diff(end, 'minute') < 0))
+    return ((now.diff(start, 'minute') > 0) && (now.diff(end, 'minute') < 0)) //|| true
 }
 const showDrawer = (roomId) => {
     formState.roomId = roomId;

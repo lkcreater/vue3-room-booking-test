@@ -1,5 +1,5 @@
 <template>
-    <a-table :columns="columns" :data-source="props.data" bordered>
+    <a-table :columns="columns" :data-source="props.data" bordered :pagination="false">
         <template #bodyCell="{ column, record }">
             <template v-if="column.key === 'dateJob'">
                 <DateFormat :date="record.dateJob"/>
