@@ -40,3 +40,18 @@ exports.findJob = async (req, res) => {
         });
     }
 };
+
+exports.test = async (req, res) => {
+    try {
+        
+        res.send({
+            status: true,
+            data: 'data'
+        });
+    } catch (err) {
+        res.status(500).send({
+            message:
+            err.message || "Some error occurred while creating the Tutorial."
+        });
+    }
+};
